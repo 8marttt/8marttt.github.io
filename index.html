@@ -1,41 +1,55 @@
-<!DOCTYPE html>
-<html lang="az">
-<head>
+<!DOCTYPE html><html lang="az"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌸 8 Mart - Xüsusi Təbrik Yarat</title>
+    <title>🌸 Sənin üçün xüsusi sürpriz!</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="hearts-container"></div>
-    <div class="main-container">
-        <div class="logo-section">
-            <div class="march8-badge">
-                <span class="march8-number">8</span>
-                <span class="march8-mart">MART</span>
+    <div class="page-loader">
+        <div class="loader-center-stage">
+            <div class="gift-box-container" id="gift-box-container">
+                <div class="gift-box">
+                    <div class="gift-box-lid" id="gift-box-lid">
+                        <div class="gift-bow">
+                            <div class="bow-loop bow-left"></div>
+                            <div class="bow-loop bow-right"></div>
+                            <div class="bow-knot"></div>
+                        </div>
+                    </div>
+                    <div class="gift-box-body"></div>
+                </div>
+                <div class="gift-box-shadow"></div>
             </div>
-            <h1 class="logo-title">Qadınlar Günü</h1>
-            <p class="logo-subtitle">Sevdiyiniz qadına xüsusi təbrik yaradın 🌸</p>
+            <div class="logo-reveal" id="logo-reveal">
+                <img src="images/compstyle%20logo.PNG" alt="Logo" class="loader-logo">
+            </div>
+        </div>
+        <p class="loader-text">Təbrik hazırlanır...</p>
+    </div>
+
+    <div class="hearts-container"></div>
+
+    <div class="main-container valentine-container">
+        <div class="name-reveal">
+            <h1 class="girl-name" id="girl-name-display">...</h1>
+        </div>
+        <p class="romantic-intro">Aşağıdakı çarxı çevir və taleyinin sənə nə hədiyyə gətirdiyini öyrən! 🎡</p>
+
+        <div class="wheel-section">
+            <div class="wheel-wrapper">
+                <div class="wheel-pointer"><div class="pointer-arrow"></div></div>
+                <canvas id="wheel-canvas" width="320" height="320"></canvas>
+            </div>
+            <button id="spin-btn" onclick="spinWheel()" class="spin-btn">ÇARXI ÇEVİR ✨</button>
         </div>
 
-        <div class="glass-card">
-            <form id="creator-form">
-                <div class="form-group">
-                    <label class="form-label">🌸 Onun Adı</label>
-                    <input type="text" id="girl-name" class="form-input" placeholder="Məsələn: Ayşən" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">✍️ Təbrik Mesajın</label>
-                    <textarea id="love-message" class="form-input" rows="3" placeholder="Xüsusi bir şeylər yaz..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">✨ Link Yarat</button>
-            </form>
-
-            <div id="link-result" class="link-result" style="display:none;">
-                <div class="link-box">
-                    <p>🔗 Hazır link:</p>
-                    <div id="link-text" class="link-text" style="word-break: break-all; color: #ffd700; font-size: 14px;"></div>
-                </div>
+        <div id="result-section" class="result-section">
+            <div class="gift-reveal">
+                <span class="gift-emoji" id="gift-emoji-display">🎁</span>
+                <h3 class="gift-name" id="gift-name-display">Hədiyyə</h3>
+            </div>
+            <div class="love-message-card">
+                <p id="love-message-display"></p>
             </div>
         </div>
     </div>
