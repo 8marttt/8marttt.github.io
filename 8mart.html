@@ -1,69 +1,38 @@
-<!DOCTYPE html>
-<html lang="az">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8 Mart Sürprizi ✨</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
-</head>
-<body>
-
-    <div class="hearts-container"></div>
-    <div id="loader-petals"></div>
-    <div id="loader-particles"></div>
-
+<div class="valentine-container">
     <div class="page-loader">
         <div class="loader-center-stage">
-            <div id="star-field"></div>
-            
             <div id="gift-box-container" class="gift-box-container">
                 <div class="gift-box">
                     <div class="gift-box-lid" id="gift-box-lid"></div>
                     <div class="gift-box-body"></div>
                 </div>
             </div>
-
             <div id="logo-reveal" class="logo-reveal">
-                <h1 class="girl-name" id="girl-name-display">Hazırlanır...</h1>
-            </div>
-
-            <div id="loader-rays"></div>
-            <div id="sparkle-burst"></div>
-        </div>
-    </div>
-
-    <div class="valentine-container main-content">
-        <div class="wheel-section">
-            <h2 class="wheel-title">Bəxtini yoxla 🌸</h2>
-            <div class="wheel-wrapper">
-                <div id="wheel-lights"></div>
-                <canvas id="wheel-canvas" width="340" height="340"></canvas>
-                <div class="wheel-pointer">
-                    <div class="pointer-arrow"></div>
-                </div>
-            </div>
-            <button id="spin-btn" onclick="spinWheel()" class="spin-btn">Hədiyyəni Seç ✨</button>
-        </div>
-
-        <div id="result-section" class="result-section">
-            <div class="gift-reveal">
-                <span id="gift-emoji-display" class="gift-emoji">🎁</span>
-                <h2 id="gift-name-display" class="gift-name"></h2>
-            </div>
-
-            <div class="love-message-card">
-                <p id="love-message-display" class="love-message-text"></p>
-            </div>
-
-            <div class="gift-choice-section">
-                <input type="text" id="gift-choice" class="gift-choice-input" placeholder="Nə istəyirsən? Məs: Güllər...">
-                <button onclick="sendWhatsApp()" class="btn-whatsapp">WhatsApp-da De 📱</button>
+                <h1 class="girl-name" id="girl-name-display"></h1>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <div class="wheel-section">
+        <div class="wheel-wrapper">
+            <div id="wheel-lights" class="wheel-lights"></div>
+            <canvas id="wheel-canvas" width="340" height="340"></canvas>
+            <div class="wheel-pointer"><div class="pointer-arrow"></div></div>
+        </div>
+        <button id="spin-btn" onclick="spinWheel()" class="spin-btn">Hədiyyəni Seç ✨</button>
+    </div>
 
+    <div id="result-section" class="result-section">
+        <div class="gift-reveal">
+            <span id="gift-emoji-display" class="gift-emoji"></span>
+            <h2 id="gift-name-display" class="gift-name"></h2>
+        </div>
+        <div class="love-message-card">
+            <p id="love-message-display" class="love-message-text"></p>
+        </div>
+        <div class="gift-choice-section">
+             <input type="text" id="gift-choice" class="gift-choice-input" placeholder="Nə istəyirsən? Məs: Güllər...">
+             <button onclick="sendWhatsApp()" class="btn btn-whatsapp">WhatsApp ilə De 📱</button>
+        </div>
+    </div>
+</div>
