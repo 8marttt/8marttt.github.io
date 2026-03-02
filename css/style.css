@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cinzel+Decorative:wght@900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,900;1,900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 :root {
   --bg-dark: #080810;
+  --bg-card: rgba(255, 255, 255, 0.05);
   --primary: #9b32dc;
   --gold: #ffd700;
   --text-primary: #ffffff;
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 body {
@@ -11,53 +15,96 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
-.main-container {
+/* Page Loader & Gift Box */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-dark);
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 20px;
+  justify-content: center;
+  transition: opacity 0.8s ease;
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 400px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.form-input {
-  width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  background: rgba(0,0,0,0.2);
-  border: 1px solid var(--primary);
-  color: white;
-  border-radius: 8px;
-}
-
-.btn {
-  width: 100%;
-  padding: 15px;
-  border: none;
-  border-radius: 10px;
+.gift-box-container {
+  width: 150px;
+  height: 150px;
+  position: relative;
   cursor: pointer;
-  font-weight: bold;
-  margin-top: 20px;
+  perspective: 1000px;
 }
 
-.btn-primary { background: var(--primary); color: white; }
-.btn-gold { background: var(--gold); color: black; }
+.gift-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-/* Animasiyalı Ürəklər */
-.hearts-container {
+.gift-box-body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #9b32dc, #5b1a8a);
+  border-radius: 8px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+.gift-box-lid {
+  position: absolute;
+  width: 110%;
+  height: 30px;
+  background: #b464ff;
+  top: -10px;
+  left: -5%;
+  border-radius: 4px;
+  z-index: 2;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Çarxın Dizaynı */
+.wheel-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 20px auto;
+}
+
+#wheel-canvas {
+  border-radius: 50%;
+  border: 8px solid var(--gold);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.spin-btn {
+  background: linear-gradient(45deg, var(--gold), #ffaa00);
+  color: #000;
+  border: none;
+  padding: 15px 40px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: var(--transition);
+}
+
+.spin-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px var(--gold); }
+
+/* Arka fondakı uçan çiçəklər */
+.floating-heart {
   position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: -10%;
   pointer-events: none;
   z-index: -1;
+  animation: float linear infinite;
 }
 
+@keyframes float {
+  to { transform: translateY(110vh) rotate(360deg); }
+}
